@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "fwcd.kotlin", 
+        "mathiasfrohlich.kotlin",
+        "esafirm.kotlin-formatter"
+    ]
+    // vscjava.vscode-gradle
+    // 
+}
