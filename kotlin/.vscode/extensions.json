@@ -2,8 +2,7 @@
     "recommendations": [
         "fwcd.kotlin", 
         "mathiasfrohlich.kotlin",
-        "esafirm.kotlin-formatter"
+        "esafirm.kotlin-formatter",
+        "vscjava.vscode-gradle"
     ]
-    // vscjava.vscode-gradle
-    // 
 }
