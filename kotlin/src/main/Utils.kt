@@ -6,6 +6,21 @@ import java.io.FileReader
 import java.math.BigInteger
 import java.security.MessageDigest
 
+public open class BaseDay(val inputName: String) {
+
+    val testName = "${inputName}_test"
+
+    fun input(): Sequence<String> {
+        return readSequence(inputName)
+    }
+
+    val input = readInput(inputName)
+    fun testInput(): Sequence<String> {
+        return readSequence(testName)
+    }
+
+}
+
 /**
  * Reads lines from the given input txt file.
  */
@@ -14,6 +29,22 @@ fun readInput(name: String) = File("src/resources", "$name.txt")
 
 fun readBuffered(name: String) = 
         BufferedReader(FileReader(File("src/resources", "$name.txt")))
+
+// read file as sequence of lines
+fun readSequence(name: String) = readBuffered(name).lineSequence()
+
+// read file as sequence using sequence generator
+fun readSequenceManual(name: String) : Sequence<String> =
+    sequence {
+        val reader = readBuffered(name)
+        with (reader) {
+            var nextline = reader.readLine()
+            while (nextline != null) {
+                yield(nextline)
+                nextline = reader.readLine()
+            }
+        }
+    }
 
 // from BufferedReader.lines() but returns the Iterator<String>
 // this was faster than java.util.Scanner with delimiter \n
