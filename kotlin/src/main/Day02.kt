@@ -1,7 +1,7 @@
 
 package day2
 
-import readInput
+import utils.readInput
 import kotlin.collections.ArrayList
 
 enum class Result(val score: Int) {

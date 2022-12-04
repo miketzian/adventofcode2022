@@ -1,4 +1,6 @@
+package day1
 
+import utils.*
 class Day1() {
 
     fun part1(input: List<String>): Int {

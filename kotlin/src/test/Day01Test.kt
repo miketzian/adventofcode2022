@@ -1,4 +1,5 @@
 
+import day1.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
