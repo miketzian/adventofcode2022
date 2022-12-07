@@ -37,17 +37,17 @@ internal class {0}Test {{
 
         val actualResult = impl.part1(impl.input())
         // assertEquals(actualResult, 459)
-        println("Result was: " + actualResult)
+        println("Result was: $actualResult")
     }}
 
     @Test
     fun testPartTwo() {{
-        val testResult = impl.part2(impl.testInput)
+        val testResult = impl.part2(impl.testInput())
         assertEquals(testResult, 4)
 
-        val actualResult = impl.part2(impl.input)
+        val actualResult = impl.part2(impl.input())
         // assertEquals(actualResult, 779)
-        println("Result was: " + actualResult)
+        println("Result was: $actualResult")
     }}
 }}
 
