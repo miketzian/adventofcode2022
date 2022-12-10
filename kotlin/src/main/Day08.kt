@@ -113,7 +113,6 @@ class Day08():BaseDay("Day08") {
                 //     println("$i -> $j") 
                 // }
 
-                var ok = false
                 var viewingDiff: MutableList<Int> = mutableListOf(0,0,0,0)
                 for (it in (i-1) downTo 0) {
                     viewingDiff[0] += 1
@@ -127,7 +126,6 @@ class Day08():BaseDay("Day08") {
                 if (viewingDiff[0] == 0) {
                     continue@inner
                 }
-                ok = false
                 for (it in (i + 1) until (grid.size)) {
                     viewingDiff[1] += 1
                     if (grid[it][j] >= v) { 
@@ -140,7 +138,6 @@ class Day08():BaseDay("Day08") {
                 if (viewingDiff[1] == 0) {
                     continue@inner
                 }
-                ok = false
                 for (jt in (j-1) downTo 0) {
                     viewingDiff[2] += 1
                     if (grid[i][jt] >= v) { 
@@ -153,7 +150,6 @@ class Day08():BaseDay("Day08") {
                 if (viewingDiff[2] == 0) {
                     continue@inner
                 }
-                ok = false
                 for (jt in (j + 1) until (grid[i].size)) {
                     viewingDiff[3] += 1
                     if (grid[i][jt] >= v) { 
@@ -166,9 +162,9 @@ class Day08():BaseDay("Day08") {
                 if (viewingDiff[3] == 0) {
                     continue@inner
                 }
-                val score = viewingDiff.fold(1, {
+                val score = viewingDiff.fold(1){
                     acc: Int, el: Int -> acc * el
-                })
+                }
                 // println("** Score: $viewingDiff -> $score")
                 if (score > bestScoreInt) {
                     bestScore = viewingDiff
