@@ -76,3 +76,29 @@ class readBufferedIter(br: BufferedReader): Iterator<String> {
 fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray()))
     .toString(16)
     .padStart(32, '0')
+
+class PeekableIterator<T>(private val wrapped: Iterator<T>): Iterator<T> {
+
+    var next: T? = null
+
+    fun peek(): T {
+        if (next == null) {
+            next = wrapped.next()
+        }
+        return next!!
+    }
+
+    override fun hasNext(): Boolean {
+        return next != null || wrapped.hasNext()
+    }
+
+    override fun next(): T {
+        if (next != null) {
+            val r = next!!
+            next = null;
+            return r
+        }
+        return wrapped.next()
+    }
+}
+
