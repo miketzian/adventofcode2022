@@ -8,7 +8,7 @@ def template(day):
 package {1}
 import utils.*
 
-class {0}():BaseDay("{0}") {{
+class {0}:BaseDay("{0}") {{
 
     fun part1(input: Sequence<String>): Int {{
         return 0
